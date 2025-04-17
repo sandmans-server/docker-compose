@@ -47,6 +47,18 @@ docker-compose -f keycloak.yaml up -d
 
 ---
 
+### 4. Portainer Service
+
+The `portainer.yaml` file contains the configuration for the Portainer service. Portainer provides a simple and user-friendly interface for managing Docker environments.
+
+To start only the Portainer service:
+
+```bash
+docker-compose -f portainer.yaml up -d
+```
+
+---
+
 ## 🔧 Features Enabled
 
 - Centralized authentication with Keycloak
