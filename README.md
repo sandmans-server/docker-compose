@@ -99,3 +99,17 @@ Feel free to modify the `keycloak.yaml` file or add new services to the `docker-
 ## 🤝 Questions?
 
 Open an issue or ask in the internal chat. Welcome aboard!
+
+---
+
+## 📑 Appendix
+
+### Ports Used
+
+| Host Port | Service Name | Service Container Port | Description                     |
+|-----------|--------------|------------------------|---------------------------------|
+| 18000     | Portainer    | 8000                   | Edge agent communication       |
+| 19443     | Portainer    | 9443                   | Secure web UI (HTTPS)          |
+| 19000     | Portainer    | 9000                   | Legacy HTTP UI (optional)      |
+| 18080     | Keycloak     | 8080                   | Keycloak authentication server |
+| 20001     | Imgproxy     | 8080                   | Image processing service       |
