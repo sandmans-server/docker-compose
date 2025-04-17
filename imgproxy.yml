@@ -6,8 +6,9 @@ services:
       - "20001:8080"
     stdin_open: true
     tty: true
-    env_file:
-      - envs/imgproxy.env
+    # for production use, set IMGPROXY_KEY and IMGPROXY_SALT in a .env file
+    # env_file:
+    #   - envs/imgproxy.env
     environment:
       # Optional for dev/testing: disable signed URLs
       # IMGPROXY_USE_SIGNED_URLS: "false"
