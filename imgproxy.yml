@@ -1,3 +1,4 @@
+# A docker-compose file for imgproxy
 services:
   imgproxy:
     image: ghcr.io/imgproxy/imgproxy:latest
@@ -5,3 +6,26 @@ services:
       - "20001:8080"
     stdin_open: true
     tty: true
+    env_file:
+      - envs/imgproxy.env
+    environment:
+      # Optional for dev/testing: disable signed URLs
+      # IMGPROXY_USE_SIGNED_URLS: "false"
+
+      # Performance & CORS
+      IMGPROXY_ALLOWED_SOURCES: "*"
+      IMGPROXY_CACHE_TTL: "86400"  # hint to downstream caches (in seconds)
+
+      # (Optional) allow local file access
+      # IMGPROXY_LOCAL_FILESYSTEM_ROOT: "/images"
+      # IMGPROXY_ENABLE_LOCAL_FILESYSTEM_ACCESS: "true"
+
+    # volumes:
+    #   # Optional: map a local directory for testing local images
+    #   - ./images:/images:ro
+
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
