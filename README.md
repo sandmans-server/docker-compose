@@ -59,6 +59,18 @@ docker-compose -f portainer.yaml up -d
 
 ---
 
+### 5. Imgproxy Service
+
+The `imgproxy.yaml` file contains the configuration for the Imgproxy service. Imgproxy is an image processing tool that can be run as a service.
+
+To start the Imgproxy service:
+
+```bash
+docker-compose -f imgproxy.yaml up -d
+```
+
+---
+
 ## 🔧 Features Enabled
 
 - Centralized authentication with Keycloak
