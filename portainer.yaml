@@ -1,0 +1,17 @@
+# This is a Docker Compose file for deploying Portainer CE (Community Edition) with TLS enabled.
+# Portainer is a lightweight management UI which allows you to easily manage your Docker containers, images, networks, and volumes.
+services:
+  portainer:
+    image: portainer/portainer-ce:lts
+    container_name: portainer
+    restart: always
+    ports:
+      - "18000:8000"     # Edge agent communication (optional)
+      - "19443:9443"     # Secure web UI (HTTPS)
+      - "19000:9000"     # Legacy HTTP UI (optional)
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer_data:/data
+
+volumes:
+  portainer_data:
