@@ -22,7 +22,9 @@ services:
       KC_DB_URL: jdbc:postgresql://postgres:5432/keycloak
       KC_DB_USERNAME: keycloak
       KC_DB_PASSWORD: change_this_securely
-      # KC_HOSTNAME: keycloak.yourdomain.com  # ← optional if behind FRP
+      KC_HOSTNAME: auth.ziangren.com
+      KC_PROXY: edge
+      KC_HTTP_ENABLED: true
       KC_BOOTSTRAP_ADMIN_USERNAME: admin  # change the admin password once started
       KC_BOOTSTRAP_ADMIN_PASSWORD: admin  # change the admin password once started
     command: start-dev
