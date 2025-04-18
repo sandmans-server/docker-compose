@@ -24,10 +24,10 @@ services:
       KC_DB_PASSWORD: change_this_securely
       KC_HOSTNAME: auth.ziangren.com
       KC_PROXY: edge
-      KC_HTTP_ENABLED: true
+      KC_HTTP_ENABLED: false
       KC_BOOTSTRAP_ADMIN_USERNAME: admin  # change the admin password once started
       KC_BOOTSTRAP_ADMIN_PASSWORD: admin  # change the admin password once started
-    command: start-dev
+    command: start
     # command start # start a development server
     restart: unless-stopped
 
