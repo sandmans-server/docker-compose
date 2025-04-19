@@ -19,7 +19,7 @@ services:
       - "18443:8443"
     volumes:
       # https certs
-      - /etc/letsencrypt/live/ziangren.com:/etc/x509/https:ro
+      - /opt/keycloak-certs/ziangren.com:/etc/x509/https:ro
     environment:
       # connection
       KC_HOSTNAME: auth.ziangren.com
