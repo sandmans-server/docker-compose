@@ -18,8 +18,8 @@ services:
     ports:
       - "18443:8443"
     volumes:
-      - /etc/letsencrypt/live/ziangren.com/fullchain.pem:/certs/fullchain.pem:ro
-      - /etc/letsencrypt/live/ziangren.com/privkey.pem:/certs/privkey.pem:ro
+      - /srv/keycloak-certs/fullchain.pem:/certs/fullchain.pem:ro
+      - /srv/keycloak-certs/privkey.pem:/certs/privkey.pem:ro
     environment:
       # connection
       KC_HOSTNAME: auth.ziangren.com
