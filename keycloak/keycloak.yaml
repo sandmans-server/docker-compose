@@ -18,16 +18,16 @@ services:
     ports:
       - "18443:8443"
     volumes:
-      # https certs
-      - /opt/keycloak-certs/ziangren.com:/etc/x509/https:ro
+      - /etc/letsencrypt/live/ziangren.com/fullchain.pem:/certs/fullchain.pem:ro
+      - /etc/letsencrypt/live/ziangren.com/privkey.pem:/certs/privkey.pem:ro
     environment:
       # connection
       KC_HOSTNAME: auth.ziangren.com
       KC_HOSTNAME_STRICT: true
       KC_HOSTNAME_STRICT_HTTPS: true
       # tls certificats
-      KC_HTTPS_CERTIFICATE_FILE: /etc/x509/https/fullchain.pem
-      KC_HTTPS_CERTIFICATE_KEY_FILE: /etc/x509/https/privkey.pem
+      KC_HTTPS_CERTIFICATE_FILE: /certs/fullchain.pem
+      KC_HTTPS_CERTIFICATE_KEY_FILE: /certs/privkey.pem
 
       # database
       KC_DB: postgres
